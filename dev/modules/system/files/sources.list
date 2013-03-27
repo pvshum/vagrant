@@ -1,14 +1,13 @@
-#############################################################
-################### OFFICIAL UBUNTU REPOS ###################
-#############################################################
-
-###### Ubuntu Main Repos
+# Ubuntu Main Repos
 deb http://au.archive.ubuntu.com/ubuntu/ precise main restricted universe multiverse 
 deb-src http://au.archive.ubuntu.com/ubuntu/ precise main restricted universe multiverse 
 
-###### Ubuntu Update Repos
+# Ubuntu Update Repos
 deb http://au.archive.ubuntu.com/ubuntu/ precise-security main restricted universe multiverse 
 deb http://au.archive.ubuntu.com/ubuntu/ precise-updates main restricted universe multiverse 
 deb-src http://au.archive.ubuntu.com/ubuntu/ precise-security main restricted universe multiverse 
 deb-src http://au.archive.ubuntu.com/ubuntu/ precise-updates main restricted universe multiverse 
 
+# Dotdeb
+deb http://mirror.us.leaseweb.net/dotdeb/ stable all
+deb-src http://mirror.us.leaseweb.net/dotdeb/ stable all
