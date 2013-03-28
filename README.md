@@ -15,5 +15,3 @@ Links
   * https://www.virtualbox.org/
   * http://docs.puppetlabs.com/
   * http://blog.vandenbrand.org/2012/03/06/how-to-create-a-vm-with-php-5-4-using-vagrant-and-puppet/
-  * http://blog.vandenbrand.org/2012/03/06/how-to-create-a-vm-with-php-5-4-using-vagrant-and-puppet/
-
