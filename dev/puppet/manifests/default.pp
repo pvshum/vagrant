@@ -27,6 +27,11 @@ class essentials {
         require => [Exec["/usr/bin/apt-get update"]],
     }
 
+    package { "mercurial":
+        ensure => present,
+        require => [Exec["/usr/bin/apt-get update"]],
+    }
+
     package { "htop":
         ensure => present,
         require => [Exec["/usr/bin/apt-get update"]],
