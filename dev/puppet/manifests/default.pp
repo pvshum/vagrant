@@ -147,6 +147,11 @@ class php {
         require => [Package["php5-common"]],
         notify => Exec["restart-apache2"],
     }
+    package { "php5-curl":
+        ensure => present,
+        require => [Package["php5-common"]],
+        notify => Exec["restart-apache2"],
+    }
     package { "php5-sqlite":
         ensure => present,
         require => [Package["php5-common"]],
