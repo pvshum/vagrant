@@ -1,18 +1,18 @@
-class system-setup {
+class debian-setup {
     exec { "import-gpg":
         command => "/usr/bin/wget -q http://www.dotdeb.org/dotdeb.gpg -O -| /usr/bin/apt-key add -"
     }
 
-    file { "/etc/apt/sources.list":
+    file { "/etc/apt/sources.list.d/dotdeb.list":
         ensure => file,
         owner => root,
         group => root,
-        source => "puppet:///modules/system/sources.list",
+        source => "puppet:///modules/system/dotdeb.list",
         require => Exec["import-gpg"],
     }
 
     exec { "/usr/bin/apt-get update":
-        require => [File["/etc/apt/sources.list"], Exec["import-gpg"]],
+        require => [File["/etc/apt/sources.list.d/dotdeb.list"], Exec["import-gpg"]],
     }
 }
 
@@ -161,7 +161,7 @@ class mysql {
 }
 
 node default {
-    include system-setup
+    include debian-setup
     include essentials
     include apache
     include php
