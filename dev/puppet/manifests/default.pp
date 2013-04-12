@@ -160,10 +160,6 @@ class php {
 }
 
 class mysql {
-    package { "mysql-server":
-        ensure => present,
-        require => [Exec["/usr/bin/apt-get update"]],
-    }
     package { "mysql-client":
         ensure => present,
         require => [Exec["/usr/bin/apt-get update"]],
