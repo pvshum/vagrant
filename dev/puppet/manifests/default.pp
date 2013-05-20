@@ -157,6 +157,25 @@ class php {
         require => [Package["php5-common"]],
         notify => Exec["restart-apache2"],
     }
+
+    file { "/etc/php5/apache2/php.ini":
+        ensure  => file,
+        owner   => root,
+        group   => root,
+        source  => "puppet:///modules/system/php.ini",
+        require => Package["php5-common"],
+        notify  => Exec["restart-apache2"],
+    }
+
+    file { "/etc/php5/cli/php.ini":
+        ensure  => file,
+        owner   => root,
+        group   => root,
+        source  => "puppet:///modules/system/php.ini",
+        require => Package["php5-common"],
+        notify  => Exec["restart-apache2"],
+    }
+
 }
 
 class mysql {
@@ -171,5 +190,5 @@ node default {
     include essentials
     include apache
     include php
-#    include mysql
+    include mysql
 }
